@@ -1,0 +1,10 @@
+.to-do-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+section {
+  display: flex;
+  gap: 10px;
+}
