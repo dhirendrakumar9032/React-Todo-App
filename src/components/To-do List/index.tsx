@@ -33,12 +33,12 @@ const ToDoList = () => {
     setInputText("");
   };
 
-  const hanldeCompleteAll = () => {
+  const handleCompleteAll = () => {
     const newTodods = todos.map((todo: any) => ({ ...todo, isCompted: true }));
     setTodos(newTodods);
   };
 
-  const hanldeDeleteAll = () => {
+  const handleDeleteAll = () => {
     setTodos([]);
   };
 
@@ -59,8 +59,8 @@ const ToDoList = () => {
         <button onClick={handleAdd}>Add </button>
       </section>
       <section className="filter-btn">
-        <Button onClick={hanldeCompleteAll}>Complete All Task</Button>
-        <Button onClick={hanldeDeleteAll}>Delete To-Do Items</Button>
+        <Button onClick={handleCompleteAll}>Complete All Task</Button>
+        <Button onClick={handleDeleteAll}>Delete To-Do Items</Button>
       </section>
       <section className="to-do-items">
         {todos?.map((todo: any) => (
