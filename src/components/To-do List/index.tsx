@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./index.css";
-import { Button } from "antd";
+import { Button, Space } from "antd";
 import { ToDoItem } from "../To-do Items";
 import { Todo } from "../../utils/interface";
 import { generateUniqueId } from "../../utils/helper";
 import { log } from "console";
+import { FilterDropdown } from "../FilterDropDownBtn";
 
 const ToDoList = () => {
   const [inputText, setInputText] = useState<string>("");
@@ -20,6 +21,9 @@ const ToDoList = () => {
   };
 
   const handleAddTodo = () => {
+    if (!inputText) {
+      return;
+    }
     if (!isEditable.edit) {
       const newTodo: Todo = {
         isCompleted: false,
@@ -99,14 +103,19 @@ const ToDoList = () => {
         </button>
       </section>
       <div className="to-do-list">
-        <section className="filter-btn">
+        <Space className="filter-btn" wrap>
           <Button type="primary" onClick={handleCompleteAll}>
             Complete All Task
           </Button>
           <Button type="primary" onClick={handleDeleteAll}>
             Delete To-Do Items
           </Button>
-        </section>
+          <FilterDropdown />
+        </Space>
+        <Space className="info-container">
+          <span className="info ">Completed: {completedTask}</span>
+          <span className="info">Total Task: {todos.length}</span>
+        </Space>
         <section className="to-do-items">
           {todos.map((todo) => (
             <ToDoItem
@@ -117,11 +126,6 @@ const ToDoList = () => {
               onEdit={onEdit}
             />
           ))}
-        </section>
-        <section className="footer">
-          <Button>Filter</Button>
-          <h5>Completed:{completedTask}</h5>
-          <p>Total Task: {todos.length}</p>
         </section>
       </div>
     </div>

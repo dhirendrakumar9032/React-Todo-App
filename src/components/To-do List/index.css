@@ -3,9 +3,6 @@
   flex-direction: column;
   align-items: center;
   width: 60%;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  background-color: #2e4053;
   border-radius: 10px;
   padding: 24px;
 }
@@ -21,13 +18,18 @@
   display: flex;
   height: 60px;
   border-radius: 30px;
-  background-color: #e8f6f3;
+  background-color: #a3e4d7;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 input {
   width: 100%;
   border: none;
-  background-color: #e8f6f3;
+  background-color: #a3e4d7;
+  font-size: 14px;
+  font-weight: bold;
+  color: #2b2a2a;
   border-radius: 30px;
   padding: 0 20px;
 }
@@ -42,7 +44,9 @@ input:focus {
   border-radius: 30px;
   font-weight: bold;
   color: white;
-  background-color: #3fb8af;
+  font-size: 20px;
+  background-color: #05c8b9;
+  cursor: pointer;
 }
 
 .filter-btn {
@@ -53,16 +57,29 @@ input:focus {
 
 .filter-btn button {
   border: none;
+  background-color: #edacba;
+  height: 40px;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 700;
 }
 
+.info-container {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  font-size: 20px;
+  color: #f0b27a;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .to-do-items {
   display: flex;
   flex-direction: column;
-}
-
-.footer {
-  margin-top: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
 }

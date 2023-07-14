@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Checkbox } from "antd";
+import { Checkbox, Space } from "antd";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
 import { Todo } from "../../utils/interface";
 import "./index.css";
@@ -23,7 +23,9 @@ const ToDoItem: FC<ToDoItemProps> = ({
   };
 
   return (
-    <div className={`to-do-item ${todo.isCompleted && "to-do-item-completed"}`}>
+    <Space
+      className={`to-do-item ${todo.isCompleted && "to-do-item-completed"}`}
+    >
       <section>
         <Checkbox checked={todo.isCompleted} onChange={onChange} />
         <span>{todo.todo}</span>
@@ -33,7 +35,7 @@ const ToDoItem: FC<ToDoItemProps> = ({
 
         <DeleteFilled onClick={() => handleDelete(todo.id)} />
       </section>
-    </div>
+    </Space>
   );
 };
 
